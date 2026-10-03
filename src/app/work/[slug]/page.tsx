@@ -86,7 +86,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   return <main className="work-page">
     <div className="work-page__top section-shell"><Link href={`/#${item.returnTo}`} className="work-page__back">← Back to portfolio</Link><span>SHREYA SIRIGIREDDY / PORTFOLIO 2026</span></div>
     <header className="work-page__hero section-shell"><p className="eyebrow">{item.kind}</p><h1>{item.title}</h1><p className="work-page__subtitle">{item.subtitle}</p></header>
-    {item.logo && <div className="work-page__logo section-shell"><Image src={item.logo.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} unoptimized /></div>}
+    {item.logo && <div className="work-page__logo section-shell"><Image src={item.logo.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} loading="eager" unoptimized /></div>}
     <div className="work-page__content section-shell"><div className="work-page__facts"><span>THE WORK</span><span>{item.kind}</span></div><div className="work-page__sections">{item.sections.map(section => <section key={section.heading}><h2>{section.heading}</h2><p>{section.copy}</p></section>)}</div></div>
     {item.tags && <div className="work-page__tags section-shell">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div>}
     {item.images && <div className={`work-page__gallery section-shell work-page__gallery--${slug}`}>{item.images.map(image => <figure key={image.src}><Image src={image.src} alt={image.alt} width={image.width} height={image.height} sizes="(max-width: 760px) 90vw, 70vw" /></figure>)}</div>}
