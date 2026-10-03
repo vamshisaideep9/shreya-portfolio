@@ -18,6 +18,11 @@
 # misc
 .DS_Store
 *.pem
+.playwright-mcp/
+.tmp-pdf/
+/canva-*.jpeg
+/ref-*.jpeg
+/reference-full.jpeg
 
 # debug
 npm-debug.log*
